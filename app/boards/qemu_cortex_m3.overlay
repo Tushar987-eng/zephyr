@@ -2,6 +2,7 @@
 / {
 	aliases {
 		led0 = &virtual_led;
+		app-led = &virtual_led;
 	};
 
 	leds {

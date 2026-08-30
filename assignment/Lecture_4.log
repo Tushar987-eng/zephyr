@@ -1,0 +1,136 @@
+(.venv) tusrivastav@F7DJN90X60 zephyr % west build -t menuconfig
+-- west build: running target menuconfig
+[0/1] Re-running CMake...
+Loading Zephyr default modules (Zephyr base (cached)).
+-- Application: /Users/tusrivastav/Documents/zephyr/zephyr/app
+-- CMake version: 3.31.10
+-- Cache files will be written to: /Users/tusrivastav/Library/Caches/zephyr
+-- Zephyr version: 4.2.0 (/Users/tusrivastav/Documents/zephyr/deps/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: qemu_cortex_m3, qualifiers: ti_lm3s6965
+-- Found host-tools: zephyr 0.17.2 (/Users/tusrivastav/zephyr-sdk-0.17.2)
+-- Found toolchain: zephyr 0.17.2 (/Users/tusrivastav/zephyr-sdk-0.17.2)
+-- Found BOARD.dts: /Users/tusrivastav/Documents/zephyr/deps/zephyr/boards/qemu/cortex_m3/qemu_cortex_m3.dts
+-- Found devicetree overlay: /Users/tusrivastav/Documents/zephyr/zephyr/app/boards/qemu_cortex_m3.overlay
+-- Generated zephyr.dts: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/zephyr.dts
+-- Generated pickled edt: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/include/generated/zephyr/devicetree_generated.h
+
+warning: QEMU_ICOUNT_SHIFT (defined at boards/Kconfig:74) was assigned the value '6' but got the
+value ''. Check these unsatisfied dependencies: QEMU_ICOUNT (=n). See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_QEMU_ICOUNT_SHIFT and/or look up
+QEMU_ICOUNT_SHIFT in the menuconfig/guiconfig interface. The Application Development Primer, Setting
+Configuration Values, and Kconfig - Tips and Best Practices sections of the manual might be helpful
+too.
+
+Parsing /Users/tusrivastav/Documents/zephyr/zephyr/app/Kconfig
+Loaded configuration '/Users/tusrivastav/Documents/zephyr/deps/zephyr/boards/qemu/cortex_m3/qemu_cortex_m3_defconfig'
+Merged configuration '/Users/tusrivastav/Documents/zephyr/zephyr/app/prj.conf'
+Configuration saved to '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/.config'
+Kconfig header saved to '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/include/generated/zephyr/autoconf.h'
+-- Found gen_kobject_list: /Users/tusrivastav/Documents/zephyr/deps/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (22.8s)
+-- Generating done (0.5s)
+-- Build files have been written to: /Users/tusrivastav/Documents/zephyr/zephyr/build
+[0/2] cd /Users/tusrivastav/Documents/zephyr/zephyr/build/...g.py /Users/tusrivastav/Documents/zephyr/zephyr/app/Kconfi
+Loaded configuration '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/.config'
+No changes to save (for '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/.config')
+(.venv) tusrivastav@F7DJN90X60 zephyr % west build -t run       
+-- west build: running target run
+[0/1] Re-running CMake...
+Loading Zephyr default modules (Zephyr base (cached)).
+-- Application: /Users/tusrivastav/Documents/zephyr/zephyr/app
+-- CMake version: 3.31.10
+-- Cache files will be written to: /Users/tusrivastav/Library/Caches/zephyr
+-- Zephyr version: 4.2.0 (/Users/tusrivastav/Documents/zephyr/deps/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: qemu_cortex_m3, qualifiers: ti_lm3s6965
+-- Found host-tools: zephyr 0.17.2 (/Users/tusrivastav/zephyr-sdk-0.17.2)
+-- Found toolchain: zephyr 0.17.2 (/Users/tusrivastav/zephyr-sdk-0.17.2)
+-- Found BOARD.dts: /Users/tusrivastav/Documents/zephyr/deps/zephyr/boards/qemu/cortex_m3/qemu_cortex_m3.dts
+-- Found devicetree overlay: /Users/tusrivastav/Documents/zephyr/zephyr/app/boards/qemu_cortex_m3.overlay
+-- Generated zephyr.dts: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/zephyr.dts
+-- Generated pickled edt: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/include/generated/zephyr/devicetree_generated.h
+Parsing /Users/tusrivastav/Documents/zephyr/zephyr/app/Kconfig
+Loaded configuration '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/.config'
+No change to configuration in '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/.config'
+Kconfig header saved to '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/include/generated/zephyr/autoconf.h'
+-- Found gen_kobject_list: /Users/tusrivastav/Documents/zephyr/deps/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (6.4s)
+-- Generating done (0.2s)
+-- Build files have been written to: /Users/tusrivastav/Documents/zephyr/zephyr/build
+[121/123] Linking CXX executable zephyr/zephyr.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       22544 B       256 KB      8.60%
+             RAM:        6488 B        64 KB      9.90%
+        IDT_LIST:          0 GB        32 KB      0.00%
+Generating files from /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/zephyr.elf for board: qemu_cortex_m3
+[121/123] To exit from QEMU enter: 'CTRL+a, x'[QEMU] CPU: cortex-m3
+qemu-system-arm: warning: nic stellaris_enet.0 has no peer
+*** Booting Zephyr OS build v4.2.0 ***
+[00:00:00.000,000] <inf> main: LED state: OFF
+[00:00:02.010,000] <inf> main: LED state: ON
+[00:00:04.020,000] <inf> main: LED state: OFF
+[00:00:06.030,000] <inf> main: LED state: ON
+[00:00:08.040,000] <inf> main: LED state: OFF
+[00:00:10.050,000] <inf> main: LED state: ON
+QEMU: Terminated
+
+
+
+
+
+
+
+
+
+(.venv) tusrivastav@F7DJN90X60 zephyr % west build -t menuconfig
+-- west build: running target menuconfig
+[0/1] cd /Users/tusrivastav/Documents/zephyr/zephyr/build/...g.py /Users/tusrivastav/Documents/zephyr/zephyr/app/Kconfi
+Loaded configuration '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/.config'
+No changes to save (for '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/.config')
+(.venv) tusrivastav@F7DJN90X60 zephyr % west build -t run       
+-- west build: running target run
+[0/1] Re-running CMake...
+Loading Zephyr default modules (Zephyr base (cached)).
+-- Application: /Users/tusrivastav/Documents/zephyr/zephyr/app
+-- CMake version: 3.31.10
+-- Cache files will be written to: /Users/tusrivastav/Library/Caches/zephyr
+-- Zephyr version: 4.2.0 (/Users/tusrivastav/Documents/zephyr/deps/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: qemu_cortex_m3, qualifiers: ti_lm3s6965
+-- Found host-tools: zephyr 0.17.2 (/Users/tusrivastav/zephyr-sdk-0.17.2)
+-- Found toolchain: zephyr 0.17.2 (/Users/tusrivastav/zephyr-sdk-0.17.2)
+-- Found BOARD.dts: /Users/tusrivastav/Documents/zephyr/deps/zephyr/boards/qemu/cortex_m3/qemu_cortex_m3.dts
+-- Found devicetree overlay: /Users/tusrivastav/Documents/zephyr/zephyr/app/boards/qemu_cortex_m3.overlay
+-- Generated zephyr.dts: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/zephyr.dts
+-- Generated pickled edt: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/include/generated/zephyr/devicetree_generated.h
+Parsing /Users/tusrivastav/Documents/zephyr/zephyr/app/Kconfig
+Loaded configuration '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/.config'
+No change to configuration in '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/.config'
+Kconfig header saved to '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/include/generated/zephyr/autoconf.h'
+-- Found gen_kobject_list: /Users/tusrivastav/Documents/zephyr/deps/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (6.2s)
+-- Generating done (0.4s)
+-- Build files have been written to: /Users/tusrivastav/Documents/zephyr/zephyr/build
+[121/123] Linking CXX executable zephyr/zephyr.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       22544 B       256 KB      8.60%
+             RAM:        6488 B        64 KB      9.90%
+        IDT_LIST:          0 GB        32 KB      0.00%
+Generating files from /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/zephyr.elf for board: qemu_cortex_m3
+[121/123] To exit from QEMU enter: 'CTRL+a, x'[QEMU] CPU: cortex-m3
+qemu-system-arm: warning: nic stellaris_enet.0 has no peer
+*** Booting Zephyr OS build v4.2.0 ***
+[00:00:00.000,000] <inf> main: LED state: OFF
+[00:00:00.510,000] <inf> main: LED state: ON
+[00:00:01.020,000] <inf> main: LED state: OFF
+[00:00:01.530,000] <inf> main: LED state: ON
+[00:00:02.040,000] <inf> main: LED state: OFF
+[00:00:02.550,000] <inf> main: LED state: ON
+[00:00:03.060,000] <inf> main: LED state: OFF
+[00:00:03.570,000] <inf> main: LED state: ON
+[00:00:04.080,000] <inf> main: LED state: OFF
+QEMU: Terminated

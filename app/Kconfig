@@ -1,3 +1,10 @@
+config APP_HEARTBEAT_PERIOD_MS
+    int "LED Heartbeat in ms"
+    default 500
+    range 100 2000
+    help
+        Enter LED Heartbeat in ms 
+        
 menuconfig LED_SUBSYSTEM
     bool "LED Subsystem"
     default y
