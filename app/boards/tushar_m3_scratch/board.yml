@@ -1,0 +1,6 @@
+board:
+  name: tushar_m3_scratch
+  full_name: QEMU Emulation for ARM Cortex-M3 - scratch version
+  vendor: qemu
+  socs:
+  - name: ti_lm3s6965

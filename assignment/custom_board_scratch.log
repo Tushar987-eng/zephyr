@@ -1,0 +1,55 @@
+(.venv) tusrivastav@F7DJN90X60 zephyr % west build -b tushar_m3_scratch ../deps/zephyr/samples/hello_world -p -- -DBOARD_ROOT=$PWD/app
+-- west build: making build dir /Users/tusrivastav/Documents/zephyr/zephyr/build pristine
+-- west build: generating a build system
+Loading Zephyr default modules (Zephyr base).
+-- Application: /Users/tusrivastav/Documents/zephyr/deps/zephyr/samples/hello_world
+-- CMake version: 3.31.10
+-- Found Python3: /Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/bin/python3.14 (found suitable version "3.14.6", minimum required is "3.10") found components: Interpreter
+-- Cache files will be written to: /Users/tusrivastav/Library/Caches/zephyr
+-- Zephyr version: 4.2.0 (/Users/tusrivastav/Documents/zephyr/deps/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: tushar_m3_scratch, qualifiers: ti_lm3s6965
+-- ZEPHYR_TOOLCHAIN_VARIANT not set, trying to locate Zephyr SDK
+-- Found host-tools: zephyr 0.17.2 (/Users/tusrivastav/zephyr-sdk-0.17.2)
+-- Found toolchain: zephyr 0.17.2 (/Users/tusrivastav/zephyr-sdk-0.17.2)
+-- Found Dtc: /opt/homebrew/bin/dtc (found suitable version "1.8.1", minimum required is "1.4.6")
+-- Found BOARD.dts: /Users/tusrivastav/Documents/zephyr/zephyr/app/boards/tushar_m3_scratch/tushar_m3_scratch.dts
+-- Generated zephyr.dts: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/zephyr.dts
+-- Generated pickled edt: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/include/generated/zephyr/devicetree_generated.h
+Parsing /Users/tusrivastav/Documents/zephyr/deps/zephyr/Kconfig
+Loaded configuration '/Users/tusrivastav/Documents/zephyr/zephyr/app/boards/tushar_m3_scratch/tushar_m3_scratch_defconfig'
+Merged configuration '/Users/tusrivastav/Documents/zephyr/deps/zephyr/samples/hello_world/prj.conf'
+Configuration saved to '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/.config'
+Kconfig header saved to '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: /Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/arm-zephyr-eabi/bin/ld.bfd (found version "2.38")
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc
+-- Found gen_kobject_list: /Users/tusrivastav/Documents/zephyr/deps/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (6.8s)
+-- Generating done (0.2s)
+-- Build files have been written to: /Users/tusrivastav/Documents/zephyr/zephyr/build
+-- west build: building application
+[1/120] Preparing syscall dependency handling
+
+[3/120] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.2.0 (/Users/tusrivastav/Documents/zephyr/deps/zephyr), build: v4.2.0
+[120/120] Linking C executable zephyr/zephyr.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:        8020 B       256 KB      3.06%
+             RAM:        3848 B        64 KB      5.87%
+        IDT_LIST:          0 GB        32 KB      0.00%
+Generating files from /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/zephyr.elf for board: tushar_m3_scratch
+(.venv) tusrivastav@F7DJN90X60 zephyr % west build -t run
+-- west build: running target run
+[0/1] To exit from QEMU enter: 'CTRL+a, x'[QEMU] CPU: cortex-m3
+qemu-system-arm: warning: nic stellaris_enet.0 has no peer
+*** Booting Zephyr OS build v4.2.0 ***
+Board Initialized
+Hello World! tushar_m3_scratch/ti_lm3s6965
+qemu-system-arm: terminating on signal 2 from pid 778 (<unknown process>)
+ninja: build stopped: interrupted by user.
+
+(.venv) tusrivastav@F7DJN90X60 zephyr % 

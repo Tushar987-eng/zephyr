@@ -1,0 +1,2 @@
+config BOARD_TUSHAR_M3_SCRATCH
+	select QEMU_TARGET
