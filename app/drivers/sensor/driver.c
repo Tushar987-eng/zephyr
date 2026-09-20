@@ -1,6 +1,7 @@
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/logging/log.h>
 #include <zephyr/drivers/gpio.h>
+#include <our_driver.h>
 
 #define DT_DRV_COMPAT our_driver
 
@@ -11,8 +12,20 @@ struct our_driver_config {
 };
 
 struct our_driver_data {
+    int cnt;
     bool on;
 };
+
+int our_driver_extension_api(const struct device *dev)
+{
+    if(dev == NULL)
+        return -EINVAL;
+    struct our_driver_data *data = dev->data;
+
+    data->cnt++;
+
+    return data->cnt;
+}
 
 static int our_sensor_sample_fetch(const struct device *dev, enum sensor_channel chan)
 {
@@ -49,6 +62,9 @@ static DEVICE_API(sensor, custom_sensor_api) = {
 static int init(const struct device* dev)
 {
     const struct our_driver_config *cfg = dev->config;
+    struct our_driver_data *data = dev->data;
+
+    data->cnt = 0;
 
     if (!gpio_is_ready_dt(&cfg->led)) 
         return -ENODEV;

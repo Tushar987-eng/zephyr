@@ -2,6 +2,7 @@
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 #include <zephyr/drivers/sensor.h>
+#include <our_driver.h>
 
 #define SLEEP_TIME_MS CONFIG_APP_HEARTBEAT_PERIOD_MS
 
@@ -37,6 +38,7 @@ int main(void)
         ret = sensor_channel_get(driver, SENSOR_CHAN_ALL, &val);
         LOG_INF("get -> %d, was_on=%d (LED OFF)", ret, val.val1);
         k_msleep(SLEEP_TIME_MS);
+        LOG_INF("You have exercised the extension API, now counter is : %d",our_driver_extension_api(driver));
     }
     // test();
     // bool led_state = true;
