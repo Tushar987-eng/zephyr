@@ -1,0 +1,7 @@
+description: Our simple Driver 
+compatible: "our,driver"
+include: [sensor-device.yaml, base.yaml]
+properties:
+  gpios:
+    type: phandle-array
+    required: true

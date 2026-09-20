@@ -2,4 +2,9 @@
 	aliases {
 		app-led = &virtual_led;
 	};
+	our_driver0: our_driver {
+		compatible = "our,driver";
+		gpios = <&gpioemul 0 GPIO_ACTIVE_HIGH>;
+		status = "okay";
+	};
 };

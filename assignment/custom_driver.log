@@ -1,0 +1,195 @@
+(.venv) tusrivastav@F7DJN90X60 zephyr % west build -b qemu_cortex_m3 app -p
+-- west build: making build dir /Users/tusrivastav/Documents/zephyr/zephyr/build pristine
+-- west build: generating a build system
+Loading Zephyr default modules (Zephyr base).
+-- Application: /Users/tusrivastav/Documents/zephyr/zephyr/app
+-- CMake version: 3.31.10
+-- Found Python3: /Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/bin/python3.14 (found suitable version "3.14.6", minimum required is "3.10") found components: Interpreter
+-- Cache files will be written to: /Users/tusrivastav/Library/Caches/zephyr
+-- Zephyr version: 4.2.0 (/Users/tusrivastav/Documents/zephyr/deps/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: qemu_cortex_m3, qualifiers: ti_lm3s6965
+-- ZEPHYR_TOOLCHAIN_VARIANT not set, trying to locate Zephyr SDK
+-- Found host-tools: zephyr 0.17.2 (/Users/tusrivastav/zephyr-sdk-0.17.2)
+-- Found toolchain: zephyr 0.17.2 (/Users/tusrivastav/zephyr-sdk-0.17.2)
+-- Found Dtc: /opt/homebrew/bin/dtc (found suitable version "1.8.1", minimum required is "1.4.6")
+-- Found BOARD.dts: /Users/tusrivastav/Documents/zephyr/deps/zephyr/boards/qemu/cortex_m3/qemu_cortex_m3.dts
+-- Found devicetree overlay: /Users/tusrivastav/Documents/zephyr/zephyr/app/boards/qemu_cortex_m3.overlay
+node '/our_driver' compatible 'our,driver' has unknown vendor prefix 'our'
+-- Generated zephyr.dts: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/zephyr.dts
+-- Generated pickled edt: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/include/generated/zephyr/devicetree_generated.h
+
+warning: QEMU_ICOUNT_SHIFT (defined at boards/Kconfig:74) was assigned the value '6' but got the
+value ''. Check these unsatisfied dependencies: QEMU_ICOUNT (=n). See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_QEMU_ICOUNT_SHIFT and/or look up
+QEMU_ICOUNT_SHIFT in the menuconfig/guiconfig interface. The Application Development Primer, Setting
+Configuration Values, and Kconfig - Tips and Best Practices sections of the manual might be helpful
+too.
+
+Parsing /Users/tusrivastav/Documents/zephyr/zephyr/app/Kconfig
+Loaded configuration '/Users/tusrivastav/Documents/zephyr/deps/zephyr/boards/qemu/cortex_m3/qemu_cortex_m3_defconfig'
+Merged configuration '/Users/tusrivastav/Documents/zephyr/zephyr/app/prj.conf'
+Configuration saved to '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/.config'
+Kconfig header saved to '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: /Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/arm-zephyr-eabi/bin/ld.bfd (found version "2.38")
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc
+-- Found gen_kobject_list: /Users/tusrivastav/Documents/zephyr/deps/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (6.9s)
+-- Generating done (0.3s)
+-- Build files have been written to: /Users/tusrivastav/Documents/zephyr/zephyr/build
+-- west build: building application
+[1/129] Preparing syscall dependency handling
+
+[3/129] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.2.0 (/Users/tusrivastav/Documents/zephyr/deps/zephyr), build: v4.2.0
+[129/129] Linking CXX executable zephyr/zephyr.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       22972 B       256 KB      8.76%
+             RAM:        6488 B        64 KB      9.90%
+        IDT_LIST:          0 GB        32 KB      0.00%
+Generating files from /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/zephyr.elf for board: qemu_cortex_m3
+(.venv) tusrivastav@F7DJN90X60 zephyr % west build -t run
+-- west build: running target run
+[0/1] To exit from QEMU enter: 'CTRL+a, x'[QEMU] CPU: cortex-m3
+qemu-system-arm: warning: nic stellaris_enet.0 has no peer
+[00:00:00.000,000] <inf> our_driver: Driver is Initialized!!!!!
+
+*** Booting Zephyr OS build v4.2.0 ***
+[00:00:00.000,000] <inf> our_driver: Hello! We are trying to do sensor_channel_get with channel : 13, this will move the LED to OFF
+[00:00:00.000,000] <inf> main: Channle ret : 0
+
+[00:00:00.000,000] <inf> main: LED state: OFF
+[00:00:00.510,000] <inf> main: LED state: ON
+[00:00:01.020,000] <inf> main: LED state: OFF
+[00:00:01.530,000] <inf> main: LED state: ON
+[00:00:02.040,000] <inf> main: LED state: OFF
+[00:00:02.550,000] <inf> main: LED state: ON
+[00:00:03.060,000] <inf> main: LED state: OFF
+[00:00:03.570,000] <inf> main: LED state: ON
+[00:00:04.080,000] <inf> main: LED state: OFF
+[00:00:04.590,000] <inf> main: LED state: ON
+[00:00:05.100,000] <inf> main: LED state: OFF
+qemu-system-arm: terminating on signal 2 from pid 778 (<unknown process>)
+
+ninja: build stopped: interrupted by user.                                                                                    
+(.venv) tusrivastav@F7DJN90X60 zephyr % 
+
+
+///////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+
+(.venv) tusrivastav@F7DJN90X60 zephyr % west build -b qemu_cortex_m3 app -p
+-- west build: making build dir /Users/tusrivastav/Documents/zephyr/zephyr/build pristine
+-- west build: generating a build system
+Loading Zephyr default modules (Zephyr base).
+-- Application: /Users/tusrivastav/Documents/zephyr/zephyr/app
+-- CMake version: 3.31.10
+-- Found Python3: /Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/bin/python3.14 (found suitable version "3.14.6", minimum required is "3.10") found components: Interpreter
+-- Cache files will be written to: /Users/tusrivastav/Library/Caches/zephyr
+-- Zephyr version: 4.2.0 (/Users/tusrivastav/Documents/zephyr/deps/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: qemu_cortex_m3, qualifiers: ti_lm3s6965
+-- ZEPHYR_TOOLCHAIN_VARIANT not set, trying to locate Zephyr SDK
+-- Found host-tools: zephyr 0.17.2 (/Users/tusrivastav/zephyr-sdk-0.17.2)
+-- Found toolchain: zephyr 0.17.2 (/Users/tusrivastav/zephyr-sdk-0.17.2)
+-- Found Dtc: /opt/homebrew/bin/dtc (found suitable version "1.8.1", minimum required is "1.4.6")
+-- Found BOARD.dts: /Users/tusrivastav/Documents/zephyr/deps/zephyr/boards/qemu/cortex_m3/qemu_cortex_m3.dts
+-- Found devicetree overlay: /Users/tusrivastav/Documents/zephyr/zephyr/app/boards/qemu_cortex_m3.overlay
+node '/our_driver' compatible 'our,driver' has unknown vendor prefix 'our'
+-- Generated zephyr.dts: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/zephyr.dts
+-- Generated pickled edt: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/edt.pickle
+-- Generated devicetree_generated.h: /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/include/generated/zephyr/devicetree_generated.h
+
+warning: QEMU_ICOUNT_SHIFT (defined at boards/Kconfig:74) was assigned the value '6' but got the
+value ''. Check these unsatisfied dependencies: QEMU_ICOUNT (=n). See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_QEMU_ICOUNT_SHIFT and/or look up
+QEMU_ICOUNT_SHIFT in the menuconfig/guiconfig interface. The Application Development Primer, Setting
+Configuration Values, and Kconfig - Tips and Best Practices sections of the manual might be helpful
+too.
+
+Parsing /Users/tusrivastav/Documents/zephyr/zephyr/app/Kconfig
+Loaded configuration '/Users/tusrivastav/Documents/zephyr/deps/zephyr/boards/qemu/cortex_m3/qemu_cortex_m3_defconfig'
+Merged configuration '/Users/tusrivastav/Documents/zephyr/zephyr/app/prj.conf'
+Configuration saved to '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/.config'
+Kconfig header saved to '/Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: /Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/arm-zephyr-eabi/bin/ld.bfd (found version "2.38")
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc
+-- Found gen_kobject_list: /Users/tusrivastav/Documents/zephyr/deps/zephyr/scripts/build/gen_kobject_list.py
+-- Configuring done (30.5s)
+-- Generating done (0.2s)
+-- Build files have been written to: /Users/tusrivastav/Documents/zephyr/zephyr/build
+-- west build: building application
+[1/129] Preparing syscall dependency handling
+
+[3/129] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.2.0 (/Users/tusrivastav/Documents/zephyr/deps/zephyr), build: v4.2.0
+[129/129] Linking CXX executable zephyr/zephyr.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       23108 B       256 KB      8.82%
+             RAM:        6488 B        64 KB      9.90%
+        IDT_LIST:          0 GB        32 KB      0.00%
+Generating files from /Users/tusrivastav/Documents/zephyr/zephyr/build/zephyr/zephyr.elf for board: qemu_cortex_m3
+(.venv) tusrivastav@F7DJN90X60 zephyr % west build -t run                  
+-- west build: running target run
+[0/1] To exit from QEMU enter: 'CTRL+a, x'[QEMU] CPU: cortex-m3
+qemu-system-arm: warning: nic stellaris_enet.0 has no peer
+[00:00:00.000,000] <inf> our_driver: Driver is Initialized!!!!!
+
+*** Booting Zephyr OS build v4.2.0 ***
+[00:00:00.000,000] <inf> our_driver: Hello! We are trying to do sensor_sample_fetch with channel : 64, this will move the LED to ON
+[00:00:00.000,000] <inf> main: fetch -> 0 (LED ON)
+[00:00:00.510,000] <inf> our_driver: Hello! We are trying to do sensor_channel_get with channel : 64, this will move the LED to OFF
+[00:00:00.510,000] <inf> main: get -> 0, was_on=1 (LED OFF)
+[00:00:01.020,000] <inf> our_driver: Hello! We are trying to do sensor_sample_fetch with channel : 64, this will move the LED to ON
+[00:00:01.020,000] <inf> main: fetch -> 0 (LED ON)
+[00:00:01.530,000] <inf> our_driver: Hello! We are trying to do sensor_channel_get with channel : 64, this will move the LED to OFF
+[00:00:01.530,000] <inf> main: get -> 0, was_on=1 (LED OFF)
+[00:00:02.040,000] <inf> our_driver: Hello! We are trying to do sensor_sample_fetch with channel : 64, this will move the LED to ON
+[00:00:02.040,000] <inf> main: fetch -> 0 (LED ON)
+[00:00:02.550,000] <inf> our_driver: Hello! We are trying to do sensor_channel_get with channel : 64, this will move the LED to OFF
+[00:00:02.550,000] <inf> main: get -> 0, was_on=1 (LED OFF)
+[00:00:03.060,000] <inf> our_driver: Hello! We are trying to do sensor_sample_fetch with channel : 64, this will move the LED to ON
+[00:00:03.060,000] <inf> main: fetch -> 0 (LED ON)
+[00:00:03.570,000] <inf> our_driver: Hello! We are trying to do sensor_channel_get with channel : 64, this will move the LED to OFF
+[00:00:03.570,000] <inf> main: get -> 0, was_on=1 (LED OFF)
+[00:00:04.080,000] <inf> our_driver: Hello! We are trying to do sensor_sample_fetch with channel : 64, this will move the LED to ON
+[00:00:04.080,000] <inf> main: fetch -> 0 (LED ON)
+[00:00:04.590,000] <inf> our_driver: Hello! We are trying to do sensor_channel_get with channel : 64, this will move the LED to OFF
+[00:00:04.590,000] <inf> main: get -> 0, was_on=1 (LED OFF)
+[00:00:05.100,000] <inf> our_driver: Hello! We are trying to do sensor_sample_fetch with channel : 64, this will move the LED to ON
+[00:00:05.100,000] <inf> main: fetch -> 0 (LED ON)
+[00:00:05.610,000] <inf> our_driver: Hello! We are trying to do sensor_channel_get with channel : 64, this will move the LED to OFF
+[00:00:05.610,000] <inf> main: get -> 0, was_on=1 (LED OFF)
+[00:00:06.120,000] <inf> our_driver: Hello! We are trying to do sensor_sample_fetch with channel : 64, this will move the LED to ON
+[00:00:06.120,000] <inf> main: fetch -> 0 (LED ON)
+[00:00:06.630,000] <inf> our_driver: Hello! We are trying to do sensor_channel_get with channel : 64, this will move the LED to OFF
+[00:00:06.630,000] <inf> main: get -> 0, was_on=1 (LED OFF)
+[00:00:07.140,000] <inf> our_driver: Hello! We are trying to do sensor_sample_fetch with channel : 64, this will move the LED to ON
+[00:00:07.140,000] <inf> main: fetch -> 0 (LED ON)
+[00:00:07.650,000] <inf> our_driver: Hello! We are trying to do sensor_channel_get with channel : 64, this will move the LED to OFF
+[00:00:07.650,000] <inf> main: get -> 0, was_on=1 (LED OFF)
+[00:00:08.160,000] <inf> our_driver: Hello! We are trying to do sensor_sample_fetch with channel : 64, this will move the LED to ON
+[00:00:08.160,000] <inf> main: fetch -> 0 (LED ON)
+[00:00:08.670,000] <inf> our_driver: Hello! We are trying to do sensor_channel_get with channel : 64, this will move the LED to OFF
+[00:00:08.670,000] <inf> main: get -> 0, was_on=1 (LED OFF)
+[00:00:09.180,000] <inf> our_driver: Hello! We are trying to do sensor_sample_fetch with channel : 64, this will move the LED to ON
+[00:00:09.180,000] <inf> main: fetch -> 0 (LED ON)
+[00:00:09.690,000] <inf> our_driver: Hello! We are trying to do sensor_channel_get with channel : 64, this will move the LED to OFF
+[00:00:09.690,000] <inf> main: get -> 0, was_on=1 (LED OFF)
+[00:00:10.200,000] <inf> our_driver: Hello! We are trying to do sensor_sample_fetch with channel : 64, this will move the LED to ON
+[00:00:10.200,000] <inf> main: fetch -> 0 (LED ON)
+[00:00:10.710,000] <inf> our_driver: Hello! We are trying to do sensor_channel_get with channel : 64, this will move the LED to OFF
+[00:00:10.710,000] <inf> main: get -> 0, was_on=1 (LED OFF)
+[00:00:11.220,000] <inf> our_driver: Hello! We are trying to do sensor_sample_fetch with channel : 64, this will move the LED to ON
+[00:00:11.220,000] <inf> main: fetch -> 0 (LED ON)
+qemu-system-arm: terminating on signal 2 from pid 778 (<unknown process>)
+
+(.venv) tusrivastav@F7DJN90X60 zephyr % ninja: build stopped: interrupted by user.
