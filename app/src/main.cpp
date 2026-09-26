@@ -31,15 +31,15 @@ int main(void)
         LOG_INF("Driver is not ready to function");
         return 0;
     }
-    while(1) {
-        auto ret = sensor_sample_fetch(driver);
-        LOG_INF("fetch -> %d (LED ON)", ret);
-        k_msleep(SLEEP_TIME_MS);
-        ret = sensor_channel_get(driver, SENSOR_CHAN_ALL, &val);
-        LOG_INF("get -> %d, was_on=%d (LED OFF)", ret, val.val1);
-        k_msleep(SLEEP_TIME_MS);
-        LOG_INF("You have exercised the extension API, now counter is : %d",our_driver_extension_api(driver));
-    }
+    // while(1) {
+    //     auto ret = sensor_sample_fetch(driver);
+    //     LOG_INF("fetch -> %d (LED ON)", ret);
+    //     k_msleep(SLEEP_TIME_MS);
+    //     ret = sensor_channel_get(driver, SENSOR_CHAN_ALL, &val);
+    //     LOG_INF("get -> %d, was_on=%d (LED OFF)", ret, val.val1);
+    //     k_msleep(SLEEP_TIME_MS);
+    //     LOG_INF("You have exercised the extension API, now counter is : %d",our_driver_extension_api(driver));
+    // }
     // test();
     // bool led_state = true;
 
