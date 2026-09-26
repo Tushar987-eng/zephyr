@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-int our_driver_extension_api(const struct device *dev);
+int our_driver_extension_api(const struct device *dev, int val);
 
 #ifdef __cplusplus
 }

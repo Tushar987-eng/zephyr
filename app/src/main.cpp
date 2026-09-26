@@ -40,6 +40,7 @@ int main(void)
     //     k_msleep(SLEEP_TIME_MS);
     //     LOG_INF("You have exercised the extension API, now counter is : %d",our_driver_extension_api(driver));
     // }
+
     // test();
     // bool led_state = true;
 

@@ -16,13 +16,13 @@ struct our_driver_data {
     bool on;
 };
 
-int our_driver_extension_api(const struct device *dev)
+int our_driver_extension_api(const struct device *dev,int value)
 {
     if(dev == NULL)
         return -EINVAL;
     struct our_driver_data *data = dev->data;
 
-    data->cnt++;
+    data->cnt = value;
 
     return data->cnt;
 }
