@@ -1,0 +1,354 @@
+/dts-v1/;
+
+/* node '/' defined in deps/zephyr/dts/common/skeleton.dtsi:9 */
+/ {
+	compatible = "arm,mps2";  /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:5 */
+	#address-cells = < 0x1 >; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:6 */
+	#size-cells = < 0x1 >;    /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:7 */
+
+	/* node '/chosen' defined in deps/zephyr/dts/common/skeleton.dtsi:12 */
+	chosen {
+		zephyr,console = &uart0;                         /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:18 */
+		zephyr,shell-uart = &uart0;                      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:19 */
+		zephyr,uart-pipe = &uart1;                       /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:20 */
+		zephyr,sram = &sram0;                            /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:21 */
+		zephyr,flash = &flash0;                          /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:22 */
+		zephyr,flash-controller = &sim_flash_controller; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:23 */
+	};
+
+	/* node '/aliases' defined in deps/zephyr/dts/common/skeleton.dtsi:13 */
+	aliases {
+		led0 = &led_0;        /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:10 */
+		led1 = &led_1;        /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:11 */
+		sw0 = &user_button_0; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:12 */
+		sw1 = &user_button_1; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:13 */
+		watchdog0 = &wdog0;   /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:14 */
+	};
+
+	/* node '/soc' defined in deps/zephyr/dts/arm/armv7-m.dtsi:6 */
+	soc {
+		#address-cells = < 0x1 >;     /* in deps/zephyr/dts/arm/armv7-m.dtsi:7 */
+		#size-cells = < 0x1 >;        /* in deps/zephyr/dts/arm/armv7-m.dtsi:8 */
+		compatible = "simple-bus";    /* in deps/zephyr/dts/arm/armv7-m.dtsi:9 */
+		interrupt-parent = < &nvic >; /* in deps/zephyr/dts/arm/armv7-m.dtsi:10 */
+		ranges;                       /* in deps/zephyr/dts/arm/armv7-m.dtsi:11 */
+
+		/* node '/soc/interrupt-controller@e000e100' defined in deps/zephyr/dts/arm/armv7-m.dtsi:13 */
+		nvic: interrupt-controller@e000e100 {
+			#address-cells = < 0x1 >;            /* in deps/zephyr/dts/arm/armv7-m.dtsi:14 */
+			compatible = "arm,v7m-nvic";         /* in deps/zephyr/dts/arm/armv7-m.dtsi:15 */
+			reg = < 0xe000e100 0xc00 >;          /* in deps/zephyr/dts/arm/armv7-m.dtsi:16 */
+			interrupt-controller;                /* in deps/zephyr/dts/arm/armv7-m.dtsi:17 */
+			#interrupt-cells = < 0x2 >;          /* in deps/zephyr/dts/arm/armv7-m.dtsi:18 */
+			arm,num-irq-priority-bits = < 0x3 >; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:279 */
+			phandle = < 0x1 >;                   /* in deps/zephyr/dts/arm/armv7-m.dtsi:10 */
+		};
+
+		/* node '/soc/timer@e000e010' defined in deps/zephyr/dts/arm/armv7-m.dtsi:21 */
+		systick: timer@e000e010 {
+			compatible = "arm,armv7m-systick"; /* in deps/zephyr/dts/arm/armv7-m.dtsi:22 */
+			reg = < 0xe000e010 0x10 >;         /* in deps/zephyr/dts/arm/armv7-m.dtsi:23 */
+		};
+
+		/* node '/soc/timer@40000000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:96 */
+		timer0: timer@40000000 {
+			compatible = "arm,cmsdk-timer"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:97 */
+			reg = < 0x40000000 0x1000 >;    /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:98 */
+			interrupts = < 0x8 0x3 >;       /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:99 */
+		};
+
+		/* node '/soc/timer@40001000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:102 */
+		timer1: timer@40001000 {
+			compatible = "arm,cmsdk-timer"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:103 */
+			reg = < 0x40001000 0x1000 >;    /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:104 */
+			interrupts = < 0x9 0x3 >;       /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:105 */
+		};
+
+		/* node '/soc/dtimer@40002000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:108 */
+		dtimer0: dtimer@40002000 {
+			compatible = "arm,cmsdk-dtimer"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:109 */
+			reg = < 0x40002000 0x1000 >;     /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:110 */
+			interrupts = < 0xa 0x3 >;        /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:111 */
+		};
+
+		/* node '/soc/uart@40004000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:114 */
+		uart0: uart@40004000 {
+			compatible = "arm,cmsdk-uart";    /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:115 */
+			reg = < 0x40004000 0x1000 >;      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:116 */
+			interrupts = < 0x1 0x3 0x0 0x3 >; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:117 */
+			interrupt-names = "tx",
+			                  "rx";           /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:118 */
+			clocks = < &sysclk >;             /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:119 */
+			current-speed = < 0x1c200 >;      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:120 */
+		};
+
+		/* node '/soc/uart@40005000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:123 */
+		uart1: uart@40005000 {
+			compatible = "arm,cmsdk-uart";    /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:124 */
+			reg = < 0x40005000 0x1000 >;      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:125 */
+			interrupts = < 0x3 0x3 0x2 0x3 >; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:126 */
+			interrupt-names = "tx",
+			                  "rx";           /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:127 */
+			clocks = < &sysclk >;             /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:128 */
+			current-speed = < 0x1c200 >;      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:129 */
+		};
+
+		/* node '/soc/uart@40006000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:132 */
+		uart2: uart@40006000 {
+			compatible = "arm,cmsdk-uart";    /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:133 */
+			reg = < 0x40006000 0x1000 >;      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:134 */
+			interrupts = < 0x5 0x3 0x4 0x3 >; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:135 */
+			interrupt-names = "tx",
+			                  "rx";           /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:136 */
+			clocks = < &sysclk >;             /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:137 */
+			current-speed = < 0x1c200 >;      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:138 */
+		};
+
+		/* node '/soc/wdog@40008000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:152 */
+		wdog0: wdog@40008000 {
+			compatible = "arm,cmsdk-watchdog"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:153 */
+			clocks = < &sysclk >;              /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:154 */
+			reg = < 0x40008000 0x1000 >;       /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:155 */
+		};
+
+		/* node '/soc/gpio@40010000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:169 */
+		gpio0: gpio@40010000 {
+			compatible = "arm,cmsdk-gpio"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:170 */
+			reg = < 0x40010000 0x1000 >;   /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:171 */
+			interrupts = < 0x6 0x3 >;      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:172 */
+			gpio-controller;               /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:173 */
+			#gpio-cells = < 0x2 >;         /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:174 */
+		};
+
+		/* node '/soc/gpio@40011000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:177 */
+		gpio1: gpio@40011000 {
+			compatible = "arm,cmsdk-gpio"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:178 */
+			reg = < 0x40011000 0x1000 >;   /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:179 */
+			interrupts = < 0x7 0x3 >;      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:180 */
+			gpio-controller;               /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:181 */
+			#gpio-cells = < 0x2 >;         /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:182 */
+		};
+
+		/* node '/soc/gpio@40012000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:185 */
+		gpio2: gpio@40012000 {
+			compatible = "arm,cmsdk-gpio"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:186 */
+			reg = < 0x40012000 0x1000 >;   /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:187 */
+			interrupts = < 0x10 0x3 >;     /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:188 */
+			gpio-controller;               /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:189 */
+			#gpio-cells = < 0x2 >;         /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:190 */
+		};
+
+		/* node '/soc/gpio@40013000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:193 */
+		gpio3: gpio@40013000 {
+			compatible = "arm,cmsdk-gpio"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:194 */
+			reg = < 0x40013000 0x1000 >;   /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:195 */
+			interrupts = < 0x11 0x3 >;     /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:196 */
+			gpio-controller;               /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:197 */
+			#gpio-cells = < 0x2 >;         /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:198 */
+		};
+
+		/* node '/soc/eth@40200000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:201 */
+		eth0: eth@40200000 {
+			compatible = "smsc,lan9220";   /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:203 */
+			reg = < 0x40200000 0x100000 >; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:206 */
+			interrupts = < 0xd 0x3 >;      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:207 */
+		};
+
+		/* node '/soc/i2c@40022000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:210 */
+		i2c_touch: i2c@40022000 {
+			compatible = "arm,versatile-i2c"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:211 */
+			clock-frequency = < 0x186a0 >;    /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:212 */
+			#address-cells = < 0x1 >;         /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:213 */
+			#size-cells = < 0x0 >;            /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:214 */
+			reg = < 0x40022000 0x1000 >;      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:215 */
+		};
+
+		/* node '/soc/i2c@40023000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:218 */
+		i2c_audio_conf: i2c@40023000 {
+			compatible = "arm,versatile-i2c"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:219 */
+			clock-frequency = < 0x186a0 >;    /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:220 */
+			#address-cells = < 0x1 >;         /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:221 */
+			#size-cells = < 0x0 >;            /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:222 */
+			reg = < 0x40023000 0x1000 >;      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:223 */
+		};
+
+		/* node '/soc/i2c@40029000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:226 */
+		i2c_shield0: i2c@40029000 {
+			compatible = "arm,versatile-i2c"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:227 */
+			clock-frequency = < 0x186a0 >;    /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:228 */
+			#address-cells = < 0x1 >;         /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:229 */
+			#size-cells = < 0x0 >;            /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:230 */
+			reg = < 0x40029000 0x1000 >;      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:231 */
+			pinctrl-0 = < &sbcon0_default >;  /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:232 */
+			pinctrl-names = "default";        /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:233 */
+		};
+
+		/* node '/soc/i2c@4002a000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:236 */
+		i2c_shield1: i2c@4002a000 {
+			compatible = "arm,versatile-i2c"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:237 */
+			clock-frequency = < 0x186a0 >;    /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:238 */
+			#address-cells = < 0x1 >;         /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:239 */
+			#size-cells = < 0x0 >;            /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:240 */
+			reg = < 0x4002a000 0x1000 >;      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:241 */
+			pinctrl-0 = < &sbcon1_default >;  /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:242 */
+			pinctrl-names = "default";        /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:243 */
+		};
+
+		/* node '/soc/mps2_fpgaio@40028000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:246 */
+		gpio_led0: mps2_fpgaio@40028000 {
+			compatible = "arm,mmio32-gpio"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:247 */
+			reg = < 0x40028000 0x4 >;       /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:248 */
+			gpio-controller;                /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:249 */
+			#gpio-cells = < 0x1 >;          /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:250 */
+			ngpios = < 0x2 >;               /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:251 */
+			phandle = < 0x5 >;              /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:29 */
+		};
+
+		/* node '/soc/mps2_fpgaio@40028008' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:254 */
+		gpio_button: mps2_fpgaio@40028008 {
+			compatible = "arm,mmio32-gpio"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:255 */
+			reg = < 0x40028008 0x4 >;       /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:256 */
+			gpio-controller;                /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:257 */
+			#gpio-cells = < 0x1 >;          /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:258 */
+			ngpios = < 0x2 >;               /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:259 */
+			direction-input;                /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:260 */
+			phandle = < 0x6 >;              /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:43 */
+		};
+
+		/* node '/soc/mps2_fpgaio@4002804c' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:263 */
+		gpio_misc: mps2_fpgaio@4002804c {
+			compatible = "arm,mmio32-gpio"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:264 */
+			reg = < 0x4002804c 0x4 >;       /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:265 */
+			gpio-controller;                /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:266 */
+			#gpio-cells = < 0x1 >;          /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:267 */
+			ngpios = < 0xa >;               /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:268 */
+		};
+	};
+
+	/* node '/leds' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:26 */
+	leds {
+		compatible = "gpio-leds"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:27 */
+
+		/* node '/leds/led_0' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:28 */
+		led_0: led_0 {
+			gpios = < &gpio_led0 0x0 >; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:29 */
+			label = "USERLED0";         /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:30 */
+		};
+
+		/* node '/leds/led_1' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:33 */
+		led_1: led_1 {
+			gpios = < &gpio_led0 0x1 >; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:34 */
+			label = "USERLED1";         /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:35 */
+		};
+	};
+
+	/* node '/gpio_keys' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:39 */
+	gpio_keys {
+		compatible = "gpio-keys"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:40 */
+
+		/* node '/gpio_keys/button_0' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:41 */
+		user_button_0: button_0 {
+			label = "USERPB0";            /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:42 */
+			gpios = < &gpio_button 0x0 >; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:43 */
+			zephyr,code = < 0xb >;        /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:44 */
+		};
+
+		/* node '/gpio_keys/button_1' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:47 */
+		user_button_1: button_1 {
+			label = "USERPB1";            /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:48 */
+			gpios = < &gpio_button 0x1 >; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:49 */
+			zephyr,code = < 0x2 >;        /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:50 */
+		};
+	};
+
+	/* node '/memory@20000000' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:54 */
+	sram0: memory@20000000 {
+		compatible = "mmio-sram";      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:55 */
+		reg = < 0x20000000 0x400000 >; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:56 */
+	};
+
+	/* node '/flash@0' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:59 */
+	flash0: flash@0 {
+		compatible = "soc-nv-flash"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:60 */
+		reg = < 0x0 0x400000 >;      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:61 */
+	};
+
+	/* node '/sim_flash_controller' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:64 */
+	sim_flash_controller: sim_flash_controller {
+		compatible = "zephyr,sim-flash"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:65 */
+		#address-cells = < 0x1 >;        /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:66 */
+		#size-cells = < 0x1 >;           /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:67 */
+		erase-value = < 0x0 >;           /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:68 */
+
+		/* node '/sim_flash_controller/flash_sim@0' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:70 */
+		flash_sim0: flash_sim@0 {
+			compatible = "soc-nv-flash";  /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:71 */
+			reg = < 0x0 0x8000 >;         /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:72 */
+			erase-block-size = < 0x400 >; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:73 */
+			write-block-size = < 0x4 >;   /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:74 */
+
+			/* node '/sim_flash_controller/flash_sim@0/partitions' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:76 */
+			partitions {
+				compatible = "fixed-partitions"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:77 */
+				#address-cells = < 0x1 >;        /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:78 */
+				#size-cells = < 0x1 >;           /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:79 */
+
+				/* node '/sim_flash_controller/flash_sim@0/partitions/partition@0' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:81 */
+				storage_partition: partition@0 {
+					label = "storage_partition"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:82 */
+					reg = < 0x0 0x8000 >;        /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:83 */
+				};
+			};
+		};
+	};
+
+	/* node '/system-clock' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:89 */
+	sysclk: system-clock {
+		compatible = "fixed-clock";      /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:90 */
+		clock-frequency = < 0x17d7840 >; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:91 */
+		#clock-cells = < 0x0 >;          /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:92 */
+		phandle = < 0x2 >;               /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:119 */
+	};
+
+	/* node '/pinctrl' defined in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:272 */
+	pinctrl: pinctrl {
+		compatible = "arm,mps2-pinctrl"; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:273 */
+		status = "okay";                 /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:274 */
+
+		/* node '/pinctrl/sbcon0_default' defined in deps/zephyr/boards/arm/mps2/mps2-pinctrl.dtsi:54 */
+		sbcon0_default: sbcon0_default {
+			phandle = < 0x3 >; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:232 */
+
+			/* node '/pinctrl/sbcon0_default/group1' defined in deps/zephyr/boards/arm/mps2/mps2-pinctrl.dtsi:55 */
+			group1 {
+				pinmux = < 0x16 >,
+				         < 0x3e >; /* in deps/zephyr/boards/arm/mps2/mps2-pinctrl.dtsi:56 */
+				input-enable;      /* in deps/zephyr/boards/arm/mps2/mps2-pinctrl.dtsi:57 */
+			};
+		};
+
+		/* node '/pinctrl/sbcon1_default' defined in deps/zephyr/boards/arm/mps2/mps2-pinctrl.dtsi:61 */
+		sbcon1_default: sbcon1_default {
+			phandle = < 0x4 >; /* in deps/zephyr/boards/arm/mps2/mps2_base.dtsi:242 */
+
+			/* node '/pinctrl/sbcon1_default/group1' defined in deps/zephyr/boards/arm/mps2/mps2-pinctrl.dtsi:62 */
+			group1 {
+				pinmux = < 0x7e >,
+				         < 0xa6 >; /* in deps/zephyr/boards/arm/mps2/mps2-pinctrl.dtsi:63 */
+				input-enable;      /* in deps/zephyr/boards/arm/mps2/mps2-pinctrl.dtsi:64 */
+			};
+		};
+	};
+
+	/* node '/cpus' defined in deps/zephyr/boards/arm/mps2/mps2_an385.dts:23 */
+	cpus {
+		#address-cells = < 0x1 >; /* in deps/zephyr/boards/arm/mps2/mps2_an385.dts:24 */
+		#size-cells = < 0x0 >;    /* in deps/zephyr/boards/arm/mps2/mps2_an385.dts:25 */
+
+		/* node '/cpus/cpu@0' defined in deps/zephyr/boards/arm/mps2/mps2_an385.dts:27 */
+		cpu@0 {
+			compatible = "arm,cortex-m3"; /* in deps/zephyr/boards/arm/mps2/mps2_an385.dts:28 */
+			reg = < 0x0 >;                /* in deps/zephyr/boards/arm/mps2/mps2_an385.dts:29 */
+		};
+	};
+};

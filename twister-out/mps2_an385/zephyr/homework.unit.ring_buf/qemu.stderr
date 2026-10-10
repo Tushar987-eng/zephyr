@@ -1,0 +1,2 @@
+qemu-system-arm: warning: nic lan9118.0 has no peer
+qemu-system-arm: terminating on signal 15 from pid 81526 (<unknown process>)

@@ -1,0 +1,4 @@
+"cmsis_6":"/Users/tusrivastav/Documents/zephyr/deps/modules/hal/cmsis_6":"${ZEPHYR_CMSIS_6_CMAKE_DIR}"
+"hal_nordic":"/Users/tusrivastav/Documents/zephyr/deps/modules/hal/nordic":"${ZEPHYR_HAL_NORDIC_CMAKE_DIR}"
+"hal_nxp":"/Users/tusrivastav/Documents/zephyr/deps/modules/hal/nxp":"${ZEPHYR_HAL_NXP_CMAKE_DIR}"
+"hal_stm32":"/Users/tusrivastav/Documents/zephyr/deps/modules/hal/stm32":"/Users/tusrivastav/Documents/zephyr/deps/modules/hal/stm32"

@@ -1,0 +1,2 @@
+# Load Zephyr board defconfig descriptions.
+osource "/Users/tusrivastav/Documents/zephyr/deps/zephyr/boards/arm/mps2/Kconfig.defconfig"

@@ -1,0 +1,27 @@
+(.venv) tusrivastav@F7DJN90X60 zephyr % export ZEPHYR_SDK_INSTALL_DIR=$HOME/zephyr-sdk-0.17.2
+(.venv) tusrivastav@F7DJN90X60 zephyr % source ~/.zshrc
+(.venv) tusrivastav@F7DJN90X60 zephyr % west twister -T tests/ring_buf -p mps2/an385 \
+    --coverage --coverage-tool gcovr \
+    --coverage-basedir app/modules/ring_buf \
+    --gcov-tool $HOME/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcov
+
+Renaming output directory to /Users/tusrivastav/Documents/zephyr/zephyr/twister-out.1
+INFO    - Using Ninja..
+INFO    - Zephyr version: v4.2.0
+INFO    - Using 'zephyr' toolchain.
+INFO    - Building initial testsuite list...
+INFO    - Writing JSON report /Users/tusrivastav/Documents/zephyr/zephyr/twister-out/testplan.json
+INFO    - Adding tasks to the queue...
+INFO    - Added initial list of jobs to queue
+INFO    - Total complete:    1/   1  100%  built (not run):    0, filtered:    0, failed:    0, error:    0
+INFO    - 1 test scenarios (1 configurations) selected, 0 configurations filtered (0 by static filter, 0 at runtime).
+INFO    - 1 of 1 executed test configurations passed (100.00%), 0 built (not run), 0 failed, 0 errored, with no warnings in 17.96 seconds.
+INFO    - 8 of 8 executed test cases passed (100.00%) on 1 out of total 1115 platforms (0.09%).
+INFO    - 1 test configurations executed on platforms, 0 test configurations were only built.
+INFO    - HTML report generated: /Users/tusrivastav/Documents/zephyr/zephyr/twister-out/coverage/index.html
+INFO    - Saving reports...
+INFO    - Writing JSON report /Users/tusrivastav/Documents/zephyr/zephyr/twister-out/twister.json
+INFO    - Writing xunit report /Users/tusrivastav/Documents/zephyr/zephyr/twister-out/twister.xml...
+INFO    - Writing xunit report /Users/tusrivastav/Documents/zephyr/zephyr/twister-out/twister_report.xml...
+INFO    - Run completed
+(.venv) tusrivastav@F7DJN90X60 zephyr % 

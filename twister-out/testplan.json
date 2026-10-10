@@ -4,18 +4,24 @@
         "zephyr_version":"v4.2.0",
         "toolchain":"zephyr",
         "commit_date":"2025-07-18T18:17:09-05:00",
-        "run_date":"2026-10-10T07:37:06+00:00",
+        "run_date":"2026-10-10T07:58:27+00:00",
         "options":{
             "help":null,
             "zephyr_base":null,
-            "verbose":1,
             "quiet":0,
             "command":"twister",
             "testsuite_root":[
                 "tests/ring_buf"
             ],
+            "enable_coverage":true,
+            "coverage":true,
+            "gcov_tool":"/Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcov",
+            "coverage_basedir":"app/modules/ring_buf",
+            "coverage_platform":[
+                "mps2/an385"
+            ],
             "platform":[
-                "qemu_cortex_m3"
+                "mps2/an385"
             ]
         }
     },
@@ -23,9 +29,9 @@
         {
             "name":"homework.unit.ring_buf",
             "arch":"arm",
-            "platform":"qemu_cortex_m3/ti_lm3s6965",
+            "platform":"mps2/an385",
             "path":"../../zephyr/tests/ring_buf",
-            "run_id":"551ef48166626d4a551df338de1c3380",
+            "run_id":"7cd4676dbc79c817d324a0f268f2a0b1",
             "runnable":true,
             "retries":0,
             "toolchain":"zephyr",
@@ -34,15 +40,11 @@
             "build_time":"0.00",
             "testcases":[
                 {
-                    "identifier":"homework.unit.ring_buf.ring_buf_push_pop.push_full_returns_enospc",
-                    "status":"None"
-                },
-                {
                     "identifier":"homework.unit.ring_buf.ring_buf_push_pop.single_push_pop",
                     "status":"None"
                 },
                 {
-                    "identifier":"homework.unit.ring_buf.ring_buf_init.fresh_state",
+                    "identifier":"homework.unit.ring_buf.ring_buf_init.reinit_clears_state",
                     "status":"None"
                 },
                 {
@@ -50,11 +52,11 @@
                     "status":"None"
                 },
                 {
-                    "identifier":"homework.unit.ring_buf.ring_buf_push_pop.fifo_order",
+                    "identifier":"homework.unit.ring_buf.ring_buf_boundaries.peek_does_not_consume",
                     "status":"None"
                 },
                 {
-                    "identifier":"homework.unit.ring_buf.ring_buf_boundaries.peek_does_not_consume",
+                    "identifier":"homework.unit.ring_buf.ring_buf_push_pop.fifo_order",
                     "status":"None"
                 },
                 {
@@ -62,7 +64,11 @@
                     "status":"None"
                 },
                 {
-                    "identifier":"homework.unit.ring_buf.ring_buf_init.reinit_clears_state",
+                    "identifier":"homework.unit.ring_buf.ring_buf_push_pop.push_full_returns_enospc",
+                    "status":"None"
+                },
+                {
+                    "identifier":"homework.unit.ring_buf.ring_buf_init.fresh_state",
                     "status":"None"
                 }
             ]

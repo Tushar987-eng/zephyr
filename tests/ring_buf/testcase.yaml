@@ -11,4 +11,5 @@ tests:
      - native_sim
      - qemu_x86
      - qemu_cortex_m3
+     - mps2/an385
     timeout: 60

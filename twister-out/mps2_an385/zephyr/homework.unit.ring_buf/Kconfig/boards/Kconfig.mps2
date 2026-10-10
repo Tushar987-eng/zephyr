@@ -1,0 +1,2 @@
+# Load board Kconfig descriptions.
+osource "/Users/tusrivastav/Documents/zephyr/deps/zephyr/boards/arm/mps2/Kconfig.mps2"
