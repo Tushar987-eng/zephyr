@@ -1,0 +1,22 @@
+tusrivastav@F7DJN90X60 zephyr % source /Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/bin/activate
+
+(.venv) tusrivastav@F7DJN90X60 zephyr % west twister -T tests/ring_buf -p qemu_cortex_m3 -v                        
+INFO    - Using Ninja..
+INFO    - Zephyr version: v4.2.0
+INFO    - Using 'zephyr' toolchain.
+INFO    - Building initial testsuite list...
+INFO    - Writing JSON report /Users/tusrivastav/Documents/zephyr/zephyr/twister-out/testplan.json
+INFO    - Adding tasks to the queue...
+INFO    - Added initial list of jobs to queue
+INFO    - 1/1 qemu_cortex_m3/ti_lm3s6965 homework.unit.ring_buf                            PASSED (qemu 1.053s <zephyr>)
+
+INFO    - 1 test scenarios (1 configurations) selected, 0 configurations filtered (0 by static filter, 0 at runtime).
+INFO    - 1 of 1 executed test configurations passed (100.00%), 0 built (not run), 0 failed, 0 errored, with no warnings in 65.32 seconds.
+INFO    - 8 of 8 executed test cases passed (100.00%) on 1 out of total 1115 platforms (0.09%).
+INFO    - 1 test configurations executed on platforms, 0 test configurations were only built.
+INFO    - Saving reports...
+INFO    - Writing JSON report /Users/tusrivastav/Documents/zephyr/zephyr/twister-out/twister.json
+INFO    - Writing xunit report /Users/tusrivastav/Documents/zephyr/zephyr/twister-out/twister.xml...
+INFO    - Writing xunit report /Users/tusrivastav/Documents/zephyr/zephyr/twister-out/twister_report.xml...
+INFO    - Run completed
+(.venv) tusrivastav@F7DJN90X60 zephyr % 

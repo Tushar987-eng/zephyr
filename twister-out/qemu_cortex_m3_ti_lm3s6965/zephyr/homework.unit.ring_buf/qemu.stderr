@@ -1,0 +1,2 @@
+qemu-system-arm: warning: nic stellaris_enet.0 has no peer
+qemu-system-arm: terminating on signal 15 from pid 71887 (<unknown process>)

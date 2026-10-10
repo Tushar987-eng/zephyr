@@ -1,0 +1,164 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:200 (message)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/kernel.cmake:129 (project)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:2 (find_package)"
+    message: |
+      The target system is: Generic - 4.2.0 - arm
+      The host system is: Darwin - 25.6.0 - arm64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/kernel.cmake:129 (project)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:2 (find_package)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      1
+      /Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/ld: /Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/lib/libc.a(lib_a-exit.o): in function `exit':
+      exit.c:(.text.exit+0x34): undefined reference to `_exit'
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/kernel.cmake:129 (project)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:2 (find_package)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+      
+      The C compiler identification is GNU, found in:
+        /Users/tusrivastav/Documents/zephyr/zephyr/twister-out/qemu_cortex_m3_ti_lm3s6965/zephyr/homework.unit.ring_buf/CMakeFiles/3.31.10/CompilerIdC/CMakeCCompilerId.o
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/kernel.cmake:129 (project)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:2 (find_package)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-g++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      1
+      /Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/ld: /Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/lib/libc.a(lib_a-exit.o): in function `exit':
+      exit.c:(.text.exit+0x34): undefined reference to `_exit'
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/kernel.cmake:129 (project)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:2 (find_package)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-g++ 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+      
+      The CXX compiler identification is GNU, found in:
+        /Users/tusrivastav/Documents/zephyr/zephyr/twister-out/qemu_cortex_m3_ti_lm3s6965/zephyr/homework.unit.ring_buf/CMakeFiles/3.31.10/CompilerIdCXX/CMakeCXXCompilerId.o
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1238 (message)"
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/kernel.cmake:135 (enable_language)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/zephyr_default.cmake:140 (include)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "CMakeLists.txt:2 (find_package)"
+    message: |
+      Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      arm-zephyr-eabi-gcc (Zephyr SDK 0.17.2) 12.2.0
+      Copyright (C) 2022 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/Users/tusrivastav/Documents/zephyr/zephyrproject/.venv/lib/python3.14/site-packages/cmake/data/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/extensions.cmake:2336 (check_c_compiler_flag)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/extensions.cmake:1195 (check_compiler_flag)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/extensions.cmake:2375 (zephyr_check_compiler_flag)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/extensions.cmake:2351 (target_cc_option_fallback)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules/extensions.cmake:155 (target_cc_option)"
+      - "/Users/tusrivastav/Documents/zephyr/deps/zephyr/CMakeLists.txt:568 (zephyr_cc_option)"
+    directories:
+      source: "/Users/tusrivastav/Documents/zephyr/zephyr/twister-out/qemu_cortex_m3_ti_lm3s6965/zephyr/homework.unit.ring_buf/CMakeFiles/CMakeScratch/TryCompile-zdQBbq"
+      binary: "/Users/tusrivastav/Documents/zephyr/zephyr/twister-out/qemu_cortex_m3_ti_lm3s6965/zephyr/homework.unit.ring_buf/CMakeFiles/CMakeScratch/TryCompile-zdQBbq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/tusrivastav/Documents/zephyr/deps/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fmacro_prefix_map__Users_tusrivastav_Documents_zephyr_zephyr_tests_ring_buf_CMAKE_SOURCE_DIR_C__nostartfiles__nostdlib__isystem___Users_tusrivastav_zephyr_sdk_0_17_2_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___Users_tusrivastav_zephyr_sdk_0_17_2_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/tusrivastav/Documents/zephyr/zephyr/twister-out/qemu_cortex_m3_ti_lm3s6965/zephyr/homework.unit.ring_buf/CMakeFiles/CMakeScratch/TryCompile-zdQBbq'
+        
+        Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_ec9c9
+        [1/2] /Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_fmacro_prefix_map__Users_tusrivastav_Documents_zephyr_zephyr_tests_ring_buf_CMAKE_SOURCE_DIR_C__nostartfiles__nostdlib__isystem___Users_tusrivastav_zephyr_sdk_0_17_2_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___Users_tusrivastav_zephyr_sdk_0_17_2_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fmacro-prefix-map=/Users/tusrivastav/Documents/zephyr/zephyr/tests/ring_buf=CMAKE_SOURCE_DIR -o CMakeFiles/cmTC_ec9c9.dir/src.c.obj -c /Users/tusrivastav/Documents/zephyr/zephyr/twister-out/qemu_cortex_m3_ti_lm3s6965/zephyr/homework.unit.ring_buf/CMakeFiles/CMakeScratch/TryCompile-zdQBbq/src.c
+        [2/2] : && /Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include" -isystem "/Users/tusrivastav/zephyr-sdk-0.17.2/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_ec9c9.dir/src.c.obj -o cmTC_ec9c9   && :
+        
+      exitCode: 0
+...

@@ -10,4 +10,5 @@ tests:
     platform_allow: 
      - native_sim
      - qemu_x86
+     - qemu_cortex_m3
     timeout: 60

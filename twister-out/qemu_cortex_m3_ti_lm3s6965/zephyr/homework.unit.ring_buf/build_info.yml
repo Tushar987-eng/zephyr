@@ -1,0 +1,46 @@
+cmake:
+  application:
+    configuration-dir: '/Users/tusrivastav/Documents/zephyr/zephyr/tests/ring_buf'
+    source-dir: '/Users/tusrivastav/Documents/zephyr/zephyr/tests/ring_buf'
+  board:
+    name: 'qemu_cortex_m3'
+    path:
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/boards/qemu/cortex_m3'
+    qualifiers: 'ti_lm3s6965'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/dts/bindings'
+    files:
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/boards/qemu/cortex_m3/qemu_cortex_m3.dts'
+    include-dirs:
+     - '/Users/tusrivastav/Documents/zephyr/deps/modules/hal/nxp/dts'
+     - '/Users/tusrivastav/Documents/zephyr/deps/modules/hal/stm32/dts'
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/include'
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/include/zephyr'
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/dts/common'
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/dts/vendor'
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/dts/rx'
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/dts/x86'
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/dts/xtensa'
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/dts/sparc'
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/dts/riscv'
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/dts/posix'
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/dts/arm64'
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/dts/arm'
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/dts/arc'
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/dts'
+  kconfig:
+    files:
+     - '/Users/tusrivastav/Documents/zephyr/deps/zephyr/boards/qemu/cortex_m3/qemu_cortex_m3_defconfig'
+     - '/Users/tusrivastav/Documents/zephyr/zephyr/tests/ring_buf/prj.conf'
+     - '/Users/tusrivastav/Documents/zephyr/zephyr/twister-out/qemu_cortex_m3_ti_lm3s6965/zephyr/homework.unit.ring_buf/zephyr/misc/generated/extra_kconfig_options.conf'
+    user-files:
+     - '/Users/tusrivastav/Documents/zephyr/zephyr/tests/ring_buf/prj.conf'
+  toolchain:
+    name: 'zephyr'
+    path: '/Users/tusrivastav/zephyr-sdk-0.17.2'
+  zephyr:
+    version: '4.2.0'
+    zephyr-base: '/Users/tusrivastav/Documents/zephyr/deps/zephyr'
+version: '0.1.0'

@@ -1,0 +1,2 @@
+# Load Sysbuild board Kconfig descriptions.
+osource "/Users/tusrivastav/Documents/zephyr/deps/zephyr/boards/qemu/cortex_m3/Kconfig.sysbuild"
