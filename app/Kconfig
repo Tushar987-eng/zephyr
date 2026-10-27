@@ -18,6 +18,12 @@ if LED_SUBSYSTEM
 
     endchoice 
 
+    config BLINK_SLEEP_TIME_MS
+        int
+        default 500 if BLINK_SLEEP_TIME_500MS
+        default 1000 if BLINK_SLEEP_TIME_1000MS
+        default 2000 if BLINK_SLEEP_TIME_2000MS
+
     menuconfig ADVANCED_LED_SETTING
         bool "Advanced LED settings"
         default y
@@ -34,6 +40,7 @@ if LED_SUBSYSTEM
         config LED_FADE_DURATION
             int "LED fade duration (ms)"
             default 500
+            range 0 5000
             help
                 Enter the required LED fade duration in ms
 
